@@ -19,12 +19,15 @@ kotlin {
         }
     }
     val xcf = XCFramework()
+    jvm()
     js()
+    mingwX64()
+    linuxX64()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
     val publicationsFromMainHost =
-        listOf(js()).map { it.name } + "kotlinMultiplatform"
+        listOf(jvm(), js()).map { it.name } + "kotlinMultiplatform"
     publishing {
         publications {
             matching { it.name in publicationsFromMainHost }.all {
@@ -34,6 +37,7 @@ kotlin {
                     .configureEach { onlyIf { findProperty("isMainHost") == "true" } }
             }
         }
+    }
 
         cocoapods {
             summary = "Some description for the Shared Module"
@@ -55,7 +59,6 @@ kotlin {
             }
         }
     }
-}
 
     android {
         namespace = "com.example.kmmgitlib"
