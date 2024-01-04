@@ -21,8 +21,6 @@ kotlin {
     val xcf = XCFramework()
     jvm()
     js()
-    mingwX64()
-    linuxX64()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
