@@ -19,13 +19,12 @@ kotlin {
         }
     }
     val xcf = XCFramework()
-    jvm()
     js()
     iosX64()
     iosArm64()
     iosSimulatorArm64()
     val publicationsFromMainHost =
-        listOf(jvm(), js()).map { it.name } + "kotlinMultiplatform"
+        listOf(js()).map { it.name } + "kotlinMultiplatform"
     publishing {
         publications {
             matching { it.name in publicationsFromMainHost }.all {
