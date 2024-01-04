@@ -11,7 +11,7 @@ import platform.UIKit.UIAlertControllerStyleAlert
 
 actual fun getToast(message: String, context: Any?) {
     print("ModuleKmm: Fun getToast iOS")
-    val view = context as? UIView
+    val view = context as? UIViewController
     val alertController = UIAlertController.alertControllerWithTitle(
         title = null,
         message = message,
@@ -26,5 +26,5 @@ actual fun getToast(message: String, context: Any?) {
 
     alertController.addAction(okAction)
 
-    view?.addSubview(alertController.view)
+    view?.presentViewController(alertController, animated = true, completion = null)
 }
