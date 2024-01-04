@@ -7,7 +7,7 @@ class Greeting {
         return "Hello, ${platform.name}!"
     }
 
-    fun showHelloWorldToast() {
-        getToast( "Hello World",this)
+    fun showHelloWorldToast(message : String , context : Any?) {
+        getToast(message,context)
     }
 }
