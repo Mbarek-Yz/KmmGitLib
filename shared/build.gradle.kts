@@ -53,6 +53,8 @@ kotlin {
         sourceSets {
             commonMain.dependencies {
                 //put your multiplatform dependencies here
+                implementation ("androidx.core:core-ktx:1.7.0")
+
             }
             commonTest.dependencies {
                 implementation(libs.kotlin.test)

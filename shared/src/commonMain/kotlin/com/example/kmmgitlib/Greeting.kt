@@ -13,4 +13,7 @@ class Greeting {
     fun showDialog(messageButtonPositive: String,messageButtonNegative: String,message: String,title: String, context: Any?){
         getDialog(messageButtonPositive,messageButtonNegative,message,title,context)
     }
+    fun showNotification(title: String, message: String, context :Any?){
+        NotificationManager(title, message, context)
+    }
 }
