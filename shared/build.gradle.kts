@@ -64,6 +64,6 @@ kotlin {
         namespace = "com.example.kmmgitlib"
         compileSdk = 34
         defaultConfig {
-            minSdk = 34
+            minSdk = 24
         }
     }

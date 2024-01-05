@@ -10,4 +10,7 @@ class Greeting {
     fun showHelloWorldToast(message : String , context : Any?) {
         getToast(message,context)
     }
+    fun showDialog(messageButtonPositive: String,messageButtonNegative: String,message: String,title: String, context: Any?){
+        getDialog(messageButtonPositive,messageButtonNegative,message,title,context)
+    }
 }
