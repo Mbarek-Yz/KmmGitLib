@@ -4,7 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 
-fun getDialog(messageButtonPositive: String,messageButtonNegative: String,message: String,title: String,context: Any?) {
+actual fun getDialog(messageButtonPositive: String,messageButtonNegative: String,message: String,title: String,context: Any?) {
     if (context is Context) {
         val builder = AlertDialog.Builder(context)
 
