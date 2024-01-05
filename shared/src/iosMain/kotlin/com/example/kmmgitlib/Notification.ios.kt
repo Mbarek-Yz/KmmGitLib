@@ -7,6 +7,6 @@ import platform.UserNotifications.UNMutableNotificationContent
 import platform.UserNotifications.UNNotificationRequest
 import platform.UserNotifications.UNUserNotificationCenter
 
-actual fun NotificationManager(title: String, message: String,context : Any?) {
+actual fun NotificationManager(title: String, message: String,context : Any?,drawble : Int) {
 
     }

@@ -3,17 +3,18 @@ package com.example.kmmgitlib
 import android.app.NotificationManager
 import android.content.Context
 import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 
-actual fun NotificationManager(title: String, message: String, context: Any?) {
+actual fun NotificationManager(title: String, message: String, context: Any?,drawble: Int) {
     if (context is Context) {
-        val builder: NotificationCompat.Builder = NotificationCompat.Builder(context)
-            .setContentTitle(title) // set title of notification
-            .setContentText(message) // this is notification message
-            .setAutoCancel(true) // makes auto cancel of notification
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT) // set priority of notification
+        val channelId = "default_channel_id"
+        val notificationBuilder = NotificationCompat.Builder(context, channelId)
+            .setContentTitle(title)
+            .setContentText(message)
+            .setSmallIcon(drawble) // Set a valid small icon here
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
-        // Add as notification
-        val manager = context.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager?
-        manager?.notify(0, builder.build())
+        val notificationManager = NotificationManagerCompat.from(context)
+        notificationManager.notify(1, notificationBuilder.build())
     }
 }
